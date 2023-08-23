@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Coding Journey</title>
+    <!-- Latest Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main style sheet -->
+    <link rel="stylesheet" href="styles.css">
+      <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="sidebar.css" rel="stylesheet">
+</head>
+<body>
+    <!--Nav Bar -->
+    <nav class="nav navbar bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">My Coding Journey</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
+                            <span class="small">Youtube Projects</span>   
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">First Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">First Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">First Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">First Project</a>
+                    </li>
+                </ul>
+            
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side bar -->
+     <main class="">
+    <div class="d-none d-sm-block  b-example-divider"></div>
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <img src="/w3School/Bootstrap/js study/pics/person-workspace.svg" style="width:60px; height: 40px" class=" img-thumbnail p-2">
+        <span class="fs-5 fw-semibold ps-2">My Works</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#Website-collapse" aria-expanded="true">
+            Websites
+          </button>
+          <div class="collapse show" id="Website-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Bootstrap/website/index.html'); return false;" >Bootstrap</a></li>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Sharpner/Expense Tracker/index.html'); return false;">Expense Tracker</a></li>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe(''); return false;" >Working Progress</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#Youtube-collapse" aria-expanded="false">
+            Youtube Tutorials
+          </button>
+          <div class="collapse" id="Youtube-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Youtubeproj/1-Profile card/index.html'); return false;">Profile Card</a></li>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Youtubeproj/2-Flipping card/index.html'); return false;">Flipping Card</a></li>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Youtubeproj/5-loginForm/index.html'); return false;">Login Form</a></li>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('/Youtubeproj/6-simple website/index.html'); return false;">Sample Website</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#JavaScript-collapse" aria-expanded="false">
+            JavaScript
+          </button>
+          <div class="collapse" id="JavaScript-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress/a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#W3Scool-collapse" aria-expanded="false">
+            W3Scool
+          </button>
+          <div class="collapse" id="W3Scool-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress/a></li>
+              <li><a href="#" class="link-dark rounded">Working Progress</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+          <button class="btn btn-toggle align-items-center rounded collapsed fw-bolder fs-5" data-bs-toggle="collapse"
+            data-bs-target="#account-collapse" aria-expanded="false">
+            <img src="/w3School/Bootstrap/js study/pics/profile.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+            My Profile
+          </button>
+          <div class="collapse" id="account-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="/ChatGPT/resume/index.html" class="link-dark rounded"> <i class="bi bi-file-earmark-person-fill me-1 "></i>
+                Resume</a></li>
+              <li><a href="https://www.linkedin.com/in/mufil-rahman/" class="link-dark rounded"> <i class="bi bi-linkedin me-1 "></i>
+                Linkedin</a></li>
+              <li><a href="https://github.com/rahmanizum" class="link-dark rounded"> <i class="bi bi-github me-1"></i>
+                Github</a></li>
+                <li><a href="https://twitter.com/rahmanmufil" class="link-dark rounded"> <i class="bi bi-twitter me-1"></i>
+                    Twitter</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+   
+    <div class="container ratio">
+        <iframe id="iframeTarget" src="/ChatGPT/blog/index.html" frameborder="1px"  title="My Works" class="border border-5 border-info-subtle"></iframe>
+    </div>
+  </main> 
+  <footer class="p-3 me-4 text-bg-dark text-center position-relative">
+    <div class="container">
+        <p class="Lead">Copyright &copy; 2023 Mufil Rahman </p>
+        <a href="" class="p-5">
+            <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+    </div>
+    </footer>
+</body>
+<!--Main js-->
+<script src="main.js"></script>
+<script src="sidebar.js"></script>
+
+</html>
