@@ -25,7 +25,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navmenu">
+            <!-- <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"> 
@@ -46,25 +46,27 @@
                     </li>
                 </ul>
             
-            </div>
+            </div> -->
         </div>
     </nav>
 
     <!-- Side bar -->
      <main class="">
     <div class="d-none d-sm-block  b-example-divider"></div>
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-        <img src="pics/person-workspace.svg" style="width:60px; height: 40px" class=" img-thumbnail p-2">
-        <span class="fs-5 fw-semibold ps-2">My Works</span>
-      </a>
+    <div class="flex-shrink-0 p-3 bg-white collapse show" style="width: 280px;" id="navmenu">
+      <div class="" >
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <img src="pics/person-workspace.svg" style="width:60px; height: 40px" class=" img-thumbnail p-2">
+          <span class="fs-5 fw-semibold ps-2">My Works</span>
+        </a>
+      </div>
       <ul class="list-unstyled ps-0">
         <li class="mb-1">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
             data-bs-target="#Website-collapse" aria-expanded="true">
             Websites
           </button>
-          <div class="collapse show" id="Website-collapse">
+          <div class="collapse" id="Website-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a href="#" class="link-dark rounded" onclick="openIframe('works/5-website/index.html'); return false;" >Bootstrap</a></li>
               <li><a href="#" class="link-dark rounded" onclick="openIframe('works/6-Expense Tracker/index.html'); return false;">Expense Tracker</a></li>
@@ -121,9 +123,9 @@
             <img src="pics/profile.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
             My Profile
           </button>
-          <div class="collapse" id="account-collapse">
+          <div class="collapse show" id="account-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="works/8-resume/index.html" class="link-dark rounded"> <i class="bi bi-file-earmark-person-fill me-1 "></i>
+              <li><a href="#" class="link-dark rounded" onclick="openIframe('works/8-resume/index.html'); return false;"> <i class="bi bi-file-earmark-person-fill me-1 "></i>
                 Resume</a></li>
               <li><a href="https://www.linkedin.com/in/mufil-rahman/" class="link-dark rounded"> <i class="bi bi-linkedin me-1 "></i>
                 Linkedin</a></li>
@@ -137,11 +139,12 @@
       </ul>
     </div>
    
-    <div class="container ratio">
-        <iframe id="iframeTarget" src="works/7-blog/index.html" frameborder="1px"  title="My Works" class="border border-5 border-info-subtle"></iframe>
+    <div class="container ratio  flex-shrink-0 mb-5">
+        <iframe id="iframeTarget" src="works/7-blog/index.html" frameborder="1px"  title="My Works" class="border border-5 border-info-subtle"  ></iframe>
     </div>
   </main> 
-  <footer class="p-3 text-bg-dark text-center position-relative">
+<div class="position-relative">
+  <footer class="p-3 text-bg-dark text-center">
     <div class="container">
         <p class="Lead">Copyright &copy; 2023 Mufil Rahman </p>
         <a href="" class="p-5">
@@ -149,6 +152,7 @@
         </a>
     </div>
     </footer>
+</div>
 </body>
 <!--Main js-->
 <script src="main.js"></script>

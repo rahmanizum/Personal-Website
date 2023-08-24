@@ -12,9 +12,8 @@ body {
     position: relative;
     top: 72px;
     flex-wrap: nowrap;
-    height: 100vh;
     height: -webkit-fill-available;
-    max-height: 150vh;
+    min-height: 150vh;
     overflow-x: auto;
     overflow-y: scroll;
   }
