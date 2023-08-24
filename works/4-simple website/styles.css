@@ -54,7 +54,7 @@ font-weight: 600;
  color: #000;
 }
 .img{
-    background: url(/Youtubeproj/6-simple\ website/pics/bg.jpg) no-repeat;
+    background: url(pics/bg.jpg) no-repeat;
     width: 100%;
     height: 100vh;
     background-size: cover;
