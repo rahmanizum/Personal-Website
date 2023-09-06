@@ -20,7 +20,7 @@ async function onSubmit(e){
     console.log(JSON.stringify(productdata));
 
 //add to server 
-await axios.post(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata`, { productdata })
+await axios.post(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata`, { productdata })
   .then((res) => {
     console.log(`${res.data.productdata.productName} added`);
     console.log(res);
@@ -29,7 +29,7 @@ await axios.post(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/prod
     console.error(err);
   });
   //print on browser by get 
-  axios.get(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata`)
+  axios.get(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata`)
   .then((res) => { 
     console.log(`data feched for printing`);
     showOutput(res);
@@ -51,7 +51,7 @@ if (e.target && e.target.classList.contains("editbtn")){
     console.log(e.target);
 //get from server 
 axios
-.get(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata/${btnId}`)
+.get(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata/${btnId}`)
 .then(res=>{
     editing(res);
     console.log(res);
@@ -61,7 +61,7 @@ axios
 
 //delete from server 
 axios
-.delete(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata/${btnId}`)
+.delete(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata/${btnId}`)
 .then(res=>console.log(`This id : ${btnId}  data deleted`))
 .catch(err=> console.error(err));
 
@@ -80,7 +80,7 @@ tablefootData.innerHTML = `Total Value worth of products : edit product to fetch
 if (e.target && e.target.classList.contains("delbtn")){
 //remove from server 
 axios
-.delete(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata/${btnId}`)
+.delete(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata/${btnId}`)
 .then(res=>console.log(`This id : ${btnId} data deleted`))
 .catch(err=> console.error(err));
 //remove from browser
@@ -129,7 +129,7 @@ tablefootData.innerHTML = `Total Value worth of products : &#8377;${totalPrice}.
 
 // PRINTING DATA WHEN CUSTOMER OPEN WEBSITE
 axios
-.get(`https://crudcrud.com/api/4b781f11bd6f4f4bad1d439db6116eaa/productdata`)
+.get(`https://crudcrud.com/api/de53c28608d245e3acc9024bfb380cfe/productdata`)
 .then((res) => { 
   console.log(`!1 st time printing`);
   showOutput(res);
