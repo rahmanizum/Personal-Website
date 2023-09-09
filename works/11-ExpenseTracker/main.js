@@ -19,24 +19,36 @@ refreshButton.addEventListener('click',onRefresh);
 //ON SUBMIT FUNCTION 
 async function onSubmit(e){
     e.preventDefault();
-    //CREATING OBJECT TO PASS TO SERVER
+    if(!validateForm()){
+        alert(`Please fill all required fields`);
+    }
+    else{
+            //CREATING OBJECT TO PASS TO SERVER
     const expenseData = {
         id:new Date().getTime(),
         userName : name.value,
         userDate : date.value,
         userItem : item.value,
-        userPrice: price
+        userPrice: price.value
     }
+    console.log("expense data",JSON.stringify(expenseData));
     try{
         //ADD TO SERVER 
         await axios.post(`https://sheet.best/api/sheets/e8748bf2-afaf-4336-a09f-6ec6ec431c11`,expenseData);
         //PRINT DATA ON BROWSER
         const getResponse = await axios.get(`https://sheet.best/api/sheets/e8748bf2-afaf-4336-a09f-6ec6ec431c11`);
         showOutput(getResponse);
+        //REST ALL 
+        name.value='';
+        date.value='';
+        item.value='';
+        price.value='';
     }
     catch(err){
         console.error(err);
     }
+    }
+
 }
 //ON CLICKING REFRESH BUTTON 
 async function onRefresh(e){
@@ -109,7 +121,8 @@ function calculateTotal(resData,who){
         }else{
             htable.querySelector(`#status`).innerHTML=`Under Budget`;
         }
-        document.querySelector(`#hupdate`).innerHTML =resData[resData.length-1].userDate;
+        if(resData.length!=0)
+        document.querySelector(`#hupdate`).innerHTML =`${resData[resData.length-1].userDate}`;
 
 
     }
@@ -127,9 +140,17 @@ function calculateTotal(resData,who){
         }else{
             mtable.querySelector(`#status`).innerHTML=`Under Budget`;
         }
+        if(resData.length!=0)
         document.querySelector(`#mupdate`).innerHTML =resData[resData.length-1].userDate;
     }
 }
+}
+//FUNCTION FOR VALIDATION 
+function validateForm() {
+    if (name.value === "" || date.value === "" || item.value === "" || price.value === "") {
+        return false;
+    }
+    return true; 
 }
 
 

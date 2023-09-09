@@ -27,18 +27,19 @@
                 <!--NAME AND DATE-->
                 <div class="row">
                     <div class="col">
-                        <select name="name" class="form-select" id="name">
+                        <select name="name" class="form-select" id="name" required>
                             <option disabled selected value="">Select a Name</option>
                             <option value="hamna">Person1</option>
                             <option value="mufil">Person2</option>
                         </select>
                     </div>
                     <div class="col">
-                        <input type="date" class="form-control" id="date" placeholder="Date" required>
+                        <input type="date" class="form-control" id="date" required>
                     </div>
                 </div>
-                <label for="pname" class="form-label">Select item:</label>
-                <select id="item" class="form-control">
+                <label for="item" class="form-label">Select item:</label>
+                <select id="item" class="form-control" required>
+                    <option disabled selected value="">Select a Item</option>
                     <option value="food">Food</option>
                     <option value="sandh">Skin and Hair</option>
                     <option value="cloth">Cloth</option>
@@ -64,7 +65,7 @@
         <table class="table table-info" id="htable">
             <h3 class="text-center fst-italic pt-3 text-black">
                 Person 1 <span class="lead ms-5 fs-3">Last updated on </span>
-                <span class="lead ms-5" id="hupdate"> </span>
+                <span class="lead ms-sm-0 nowrap" id="hupdate"> </span>
             </h3>
             <!--TABLE HEAD STARTS HERE-->
             <thead class="thead-dark table-danger">
@@ -160,9 +161,9 @@
         </table>
         <!--TABLE 2-->
         <table class="table table-info" id="mtable">
-            <h3 class="text-center fst-italic text-black">
-                Person 2<span class="lead ms-5 fs-3">Last updated on </span>
-                <span class="lead ms-5" id="mupdate"></span>
+            <h3 class="text-center fst-italic pt-3 text-black">
+                Person 2 <span class="lead ms-5 fs-3">Last updated on </span>
+                <span class="lead ms-sm-0 nowrap" id="mupdate"> </span>
             </h3>
             <!--TABLE HEADER STARTS HERE -->
             <thead class="thead-dark table-danger">
