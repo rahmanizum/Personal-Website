@@ -1,6 +1,6 @@
 body{
     /* background-image: linear-gradient(to left, white ,grey); */
-    background-image: radial-gradient(circle,grey,white);
+    /* background-image: radial-gradient(circle,grey,white); */
     background-size: cover;
     background-repeat: no-repeat;
     padding: 30 ;
