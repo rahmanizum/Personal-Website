@@ -1,4 +1,5 @@
 
+//ASSIGNING ELEMENTS TO VARIABLE
 const expenseForm = document.querySelector('#expenseForm');
 const amount= document.querySelector('#amount');
 const description= document.querySelector('#description');
@@ -6,76 +7,91 @@ const category= document.querySelector('#category');
 const userList= document.querySelector('#items');
 
 
-
+//ADD EVENT LISTNERS
 expenseForm.addEventListener('submit',onsubmit);
+userList.addEventListener('click', onEditDelete);
 
+//SUBMIT FUNCTION
 function onsubmit(e){
+    const id = new Date().getTime();
     e.preventDefault();
     const userData={
+        createdAt : id,
         userAmount:`${amount.value}`,
         userDescription:`${description.value}`,
         userCategory:`${category.value}`
     }
-    userDataString= JSON.stringify(userData);
-    //adding element to local storage
-    localStorage.setItem(`${amount.value}`,`${JSON.stringify(userData)}`);
+    //ADDING DATE TO LOCAL STORAGE 
+    localStorage.setItem(`${id}`,`${JSON.stringify(userData)}`);
     
-    //adding element to browser
-    const li = document.createElement(`li`);
-    li.className=`list-group-item-light border border-black mt-3 p-2 ps-5 w-75`;
-    li.innerText=` ${amount.value} rs - ${description.value} - ${category.value} `
+    //ADDING VALUES TO BROWSER BY CREATING A TABLE ROW
+    const tr = document.createElement(`tr`);
+    const td1 =document.createElement(`td`);
+    const td2 =document.createElement(`td`);
+    const td3 =document.createElement(`td`);
+    const td4 =document.createElement(`td`);
+    const td5 =document.createElement(`td`);
+    td1.innerText = `${amount.value} ₹`;
+    td2.innerText=`${description.value}`;
+    td3.innerText=`${category.value}`;
 
-    //edit btn
+    //CREATING EDIT BUTTON
     const editbtn= document.createElement(`button`);
     editbtn.className=`btn btn-success editbtn m-2`;
-    editbtn.setAttribute("type","submit");
-    editbtn.setAttribute("id",`${userDataString}`);
+    editbtn.setAttribute("id",`${id}`);
     editbtn.innerHTML=`Edit`;
+    td4.appendChild(editbtn);
 
-    //delebtn 
+    //CREATING DELETE BUTTON
     const delbtn= document.createElement(`button`);
     delbtn.className=`btn btn-danger delbtn m-2`;
-    delbtn.setAttribute("type","submit");
-    delbtn.setAttribute("id",`${userDataString}`);
+    delbtn.setAttribute("id",`${id}`);
     delbtn.innerHTML=`Delete`;
-   // appending
-    li.appendChild(editbtn);
-    li.appendChild(delbtn);
-    userList.append(li);
+    td5.appendChild(delbtn);
+   // APPENDING ALL TABLE DATA TO TABLE ROW
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tr.appendChild(td5);
+
+   // APPENDING TABLE ROW TO TABLE BODY
+    userList.append(tr);
     
-    //reinitializing to blank 
+   // RESETTING VALUES
     amount.value='';
     description.value='';
     category.value='';
 }
 
-// create delete function 
-userList.addEventListener('click', onDelete);
-
-function onDelete(e) {
+//EDIT OR DELETE FUNCTION
+function onEditDelete(e) {
     e.preventDefault();
     if (e.target.classList.contains('delbtn')) {
         // remove from local storage
-        const btnId = JSON.parse(e.target.id).userAmount;
+        const btnId = parseInt(e.target.getAttribute('id'));
         localStorage.removeItem(`${btnId}`);
 
         // //delete value from browser
-        e.target.parentElement.remove();
+        e.target.parentElement.parentElement.remove();
 
     }
     if (e.target.classList.contains('editbtn')) {
+        const btnId = parseInt(e.target.getAttribute('id'));
+        const user = localStorage.getItem(`${btnId}`)
+        const data = JSON.parse(user);
+        console.log(data);
         // //remove from local storage
-        const btnId = JSON.parse(e.target.id);
-        localStorage.removeItem(`${btnId.userAmount}`);
+        localStorage.removeItem(`${btnId}`);
         
         // //regain details
         const editAmout= document.querySelector('input');
-        editAmout.value=`${btnId.userAmount}`;
+        editAmout.value= data.userAmount;
         const editselect= document.querySelectorAll('select');
-        editselect[0].value=`${btnId.userDescription}`;
-        editselect[1].value=`${btnId.userCategory}`;
+        editselect[0].value=data.userDescription;
+        editselect[1].value=data.userCategory;
         // //delete value from browser
-        e.target.parentElement.remove();
+        e.target.parentElement.parentElement.remove();
     }
 }
 

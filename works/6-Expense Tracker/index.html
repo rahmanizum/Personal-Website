@@ -25,7 +25,7 @@
             <form action="#" class="" id="expenseForm">
                 <!-- Choose Amount -->
                 <div class="col mb-3">
-                    <label for="amount" class="col-form-label">Choose Amount</label>
+                    <label for="amount" class="col-form-label">Enter Amount</label>
                     <input type="number" class="form-control" id="amount" required>
                 </div>
         
@@ -33,7 +33,7 @@
                 <div class="col mb-3">
                     <label for="description" class="col-form-label">Choose Description</label>
                     <select name="description" id="description" class="form-select form-control" required>
-                        <option value="">choose...</option>
+                        <option disabled selected value="">choose...</option>
                         <option value="Food">Food</option>
                         <option value="Vacation">Vacation</option>
                         <option value="Fuel">Fuel</option>
@@ -44,7 +44,7 @@
                 <div class="col mb-3">
                     <label for="category" class="col-form-label">Choose Category</label>
                     <select name="category" id="category" class="form-select form-control" required>
-                        <option value="">choose...</option>
+                        <option disabled selected value="">choose...</option>
                         <option value="Breakfast">Breakfast</option>
                         <option value="Lunch">Lunch</option>
                         <option value="Dinner">Dinner</option>
@@ -65,18 +65,35 @@
         </div>
         
 
+<!--response table-->
+        <div class="container table-responsive">
+          <table class="table table-bordered">
+            <thead>
+                    <tr class="nowrap">
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+            </thead>
+            <tbody id="items">
+                <tr>
+                    <!-- <td>5 &#8377</td>
+                    <td>Food</td>
+                    <td>Lunch</td>
+                    <td>
+                        <button class="btn btn-success editbtn ms-2" type="submit" id="{&quot;userAmount&quot;:&quot;1&quot;,&quot;userDescription&quot;:&quot;Food&quot;,&quot;userCategory&quot;:&quot;Food&quot;}">Edit
+                        </button>
 
-        <div class="container-fluid " style="height:500px">
-          <ul class="list-group  list-unstyled p-2 align-items-center" id="items">
-            <!-- <li class="list-group-item-light m-2">Amount 1 Description Food Category Food 
-                <button class="btn btn-success editbtn ms-3" type="submit" id="{&quot;userAmount&quot;:&quot;1&quot;,&quot;userDescription&quot;:&quot;Food&quot;,&quot;userCategory&quot;:&quot;Food&quot;}">Edit
-                    
-                </button>
-                <button class="btn btn-danger delbtn ms-3" type="submit" id="{&quot;userAmount&quot;:&quot;1&quot;,&quot;userDescription&quot;:&quot;Food&quot;,&quot;userCategory&quot;:&quot;Food&quot;}">Delete
+                    </td>
+                    <td>
+                        <button class="btn btn-danger delbtn ms-2" type="submit" id="{&quot;userAmount&quot;:&quot;1&quot;,&quot;userDescription&quot;:&quot;Food&quot;,&quot;userCategory&quot;:&quot;Food&quot;}">Delete </button>
+                    </td> -->
+                </tr>
+            </tbody>
 
-                </button></li> -->
-
-          </ul> 
+          </table>
         </div>
 
     </section>
