@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+</head>
+<body>
+    <div class="container-sm mt-5 ">
+        <div class="card">
+            <div class="card-header bg-primary text-white text-center">
+                <h2>Sign Up Form</h2>
+            </div>
+            <div class="card-body">
+                <form action="/signin" method="post">
+                    <div class="form-group">
+                        <label for="userName"><i class="fas fa-user"></i> Email or Phone</label>
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="Email or Phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Enter a Password</label>
+                        <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Re-enter your password</label>
+                        <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-primary" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
