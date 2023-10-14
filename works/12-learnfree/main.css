@@ -1,0 +1,5 @@
+.left-container {
+    max-height: 30rem; /* Set the desired height for the left container */
+    overflow-y: auto;
+}
+
